@@ -1,0 +1,29 @@
+<% include ../partials/header %> 
+
+     <header class="jumbotron">
+         <div class="container">
+             <h1><span class="glyphicon glyphicon-tent"></span> Welcome To SpaceBnb!</h1>
+             <p>View hand-picked spacegrounds from all over the universe!</p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="spacegrounds/new">Add New Spaceground</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% spacegrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= spaceground.image %>">
+                   <div class="caption">
+                       <h4><%= spaceground.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/spacegrounds/<%= spaceground._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
